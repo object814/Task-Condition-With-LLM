@@ -112,7 +112,7 @@
             <span class="author-block"><sup>1</sup>National University of Singapore,</span>
             <span class="author-block"><sup>2</sup>UC Berkeley, USA</span>
             <span class="author-block"><sup>3</sup>University of Massachusetts Amherst, USA</span>
-            <span class="author-block"><sup>3</sup>MIT-IBM Watson AI Lab, USA</span>
+            <span class="author-block"><sup>4</sup>MIT-IBM Watson AI Lab, USA</span>
           </div>
           
           </div>
@@ -130,52 +130,42 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            This work introduces a framework harnessing the capabilities of Large Language Models (LLMs) to generate primitive task conditions for generalizable long-horizon manipulations with novel objects and unseen tasks. 
+            These task conditions serve as guides for the generation and adjustment of Dynamic Movement Primitives (DMP) trajectories for longhorizon task execution. 
+            We further create a challenging robotic manipulation task suite based on Pybullet for long-horizon task evaluation. 
+            Extensive experiments in both simulated and realworld environments demonstrate the effectiveness of our framework on both familiar tasks involving new objects and novel but related tasks, 
+            highlighting the potential of LLMs in enhancing robotic system versatility and adaptability 
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- Framework Structure -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Framework Structure</h2>
+        
+        <div class="content has-text-justified">
+          <p>
+            We leverage LLMs to generate and generalize primitive task conditions for both familiar tasks with novel objects and novel but related tasks. 
+            Subsequently, the highlevel task conditions guide the generation and adjustment of lowlevel trajectories originally learned from demonstrations for longhorizon task execution. 
+          </p>
         </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
-  </div>
-</section>
-
-
+        
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+<!--/  Framework Structure  -->
+    
 <section class="section">
   <div class="container is-max-desktop">
 
