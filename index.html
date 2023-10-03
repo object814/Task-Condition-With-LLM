@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Generalizable Long-Horizon Manipulations with Large Language Models">
+  <title>Generalizable Long-Horizon Manipulations with Large Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+  <link rel="stylesheet" href="index.css">
+<style>
+  
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body" style="background-color: white;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="width: 1200px; color: black;">Generalizable Long-Horizon Manipulations with
+            Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Haoyu Zhou<sup>1</sup>,</span>
+            <span class="author-block">
+              Mingyu Ding<sup>2</sup>,</span>
+            <span class="author-block">
+              Weikun Peng<sup>1</sup>,</span>
+            </span>
+            <span class="author-block">
+              Masayoshi Tomizuka<sup>2</sup>,</span>
+            </span>
+            <span class="author-block">
+              Lin Shao<sup>1</sup>,</span>
+            </span>
+            <span class="author-block">
+              Chuang Gan<sup>3,4</sup></span>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>National University of Singapore;</span>
+            <span class="author-block"><sup>2</sup>UC Berkeley, USA;</span>
+            <span class="author-block"><sup>3</sup>University of Massachusetts Amherst, USA;</span>
+            <span class="author-block"><sup>4</sup>MIT-IBM Watson AI Lab, USA</span>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="toptitle">
+  <div class="zhong w">
+    <h4 style="position: absolute; top: 20px; font-size: 25px;">Abstract</h4>
+    <p style="padding-top: 70px; line-height: 30px; ">
+      This work introduces a framework harnessing the capabilities of Large Language Models (LLMs) to generate primitive task conditions for generalizable long-horizon manipulations with novel
+  objects and unseen tasks. These task conditions serve as guides for the generation and adjustment of Dynamic Movement Primitives (DMP) trajectories for longhorizon task execution. We
+  further create a challenging robotic manipulation task suite based on Pybullet for long-horizon task evaluation. Extensive experiments in both simulated and realworld environments demonstrate
+  the effectiveness of our framework on both familiar tasks involving new objects and novel but related tasks, highlighting the potential of LLMs in enhancing robotic system versatility and
+  adaptability
+    </p>
+  </div>
+</div>
+<div class="txtbox">
+    <div class="main w">
+      <h4>Framework Structure</h4>
+      <p style="font-size: 15px;">We leverage LLMs to generate and generalize primitive task conditions for both familiar tasks with novel objects and novel but related tasks. Subsequently, the highlevel task
+        conditions guide the generation and adjustment of lowlevel trajectories originally learned from demonstrations for longhorizon task execution.</p>
+        <div class="lef">
+          <video controls style="width: 900px;" autoplay muted loop>  
+            <source src="compressed/1.mp4" type="video/mp4">  
+          </video>
+        </div>
+        <img src="compressed/2.png" alt="">
+      </div>
+</div>
+<div class="txtbox2">
+    <div class="main2 w">
+      <h4>Task condition generation and generalization experiment</h4>
+      <div class="zuo">
+        We evaluate the ability of our framework to generate and generalize task conditions
+on all 10 primitive tasks. The LLM (GPT-3.5) is provided with condition examples.
+Comparison is made with task conditions generated from environments (methods
+explained in paper). A successfully generated task condition should contain accurate
+and enough information to guide the execution of the primitive task.
+      </div>
+      
+      <div class="right">
+      </div>
+    </div>
+</div>
+
+<div class="txtbox2">
+  <div class="main2 w">
+    <h4>Simulation experiment</h4>
+    <div class="zuo">
+      To evaluate our framework, we design a challenging Robotic Manipulation Task Suite in Pybullet. The
+environment consists of two 7 Dof robots Franka and Kinova with a kitchen scene including various
+interactive objects. It contains 10 diverse primitive tasks (37 if considering different objects) and 4
+long-horizon tasks in simulation. We evaluate our framework's ability to execute long-horizon tasks
+using DMP trajectories generated and adjuested by task conditions.
+    </div>
+    <div class="right3">
+    </div>
+  </div>
+</div>
+
+<div class="imglist">
+  <div class="main3 w">
+    <video controls autoplay muted loop>  
+      <source src="compressed/5.mp4" type="video/mp4">  
+    </video>
+    <span class="s1">Demonstration: Put the bowl into the bottom drawer</span>
+    <video controls autoplay muted loop>  
+      <source src="compressed/6.mp4" type="video/mp4">  
+    </video>
+    <span class="s2">Generation and execution: Put the bowl into the upper drawer</span>
+    <video controls autoplay muted loop>  
+      <source src="compressed/7.mp4" type="video/mp4">  
+    </video>
+    <span class="s3">Demonstration: Put the bowl into the bottom drawer</span>
+    <video controls autoplay muted loop>  
+      <source src="compressed/8.mp4" type="video/mp4">  
+    </video>
+    <span class="s4">Generation and execution: Put the bowl into the upper drawer</span>
+  </div>
+</div>
+
+<div class="box">
+    <div class="main4 w">
+      <div class="left">
+        <div>
+          <span class="img">
+            <video controls autoplay muted loop>  
+              <source src="compressed/9.mp4" type="video/mp4">  
+            </video>
+          </span>
+            <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+            <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">without task condition</h4>
+            <p style="text-align: center; color: rgb(95, 95, 95); line-height: 32px;">
+              The move into primitive task is failed because initial
+              goal position obtained from environment pointcloud is
+              deviated. And a collision between bottle and box
+              happened.
+            </p>
+          </div>
+        <div>
+          <span class="img">
+            <video controls autoplay muted loop>  
+              <source src="compressed/10.mp4" type="video/mp4">  
+            </video>
+          </span>
+            <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+            <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">with task condition adjusting trajectory</h4>
+            <p style="text-align: center; color: rgb(95, 95, 95);  line-height: 32px;">
+              As the collision between bottle and box is against task
+condition collision, the manipulator backwards a few
+steps and adjust goal position to generate a new DMP
+trajectory, eventually complete the task.
+            </p>
+        </div>
+        <div>
+          <span class="img">
+            <video controls autoplay muted loop>  
+              <source src="compressed/11.mp4" type="video/mp4">  
+            </video>
+          </span>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">without task condition</h4>
+          <p style="text-align: center; color: rgb(95, 95, 95);  line-height: 32px;">
+            The move into primitive task is failed because initial
+            goal position obtained from environment pointcloud is
+            deviated. And a collision between bottle and box
+            happened.
+          </p>
+        </div>
+        <div>
+          <span class="img">
+            <video controls autoplay muted loop>  
+              <source src="compressed/12.mp4" type="video/mp4">  
+            </video>
+          </span>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">without task condition</h4>
+          <p style="text-align: center; color: rgb(95, 95, 95);  line-height: 32px;">
+            The move into primitive task is failed because initial
+            goal position obtained from environment pointcloud is
+            deviated. And a collision between bottle and box
+            happened.
+          </p>
+        </div>
+      </div>
+      <div class="right">
+          <div class="top">
+            <p style="text-align: center; font-size: 20px;">Task condition generated byLLM</p>
+            <p style="line-height: 32px;">
+              <b>Task name:</b> move bottle into box<br>
+              <b>Relevant objects:</b> bottle, box, gripper<br>
+              Pre-conditions:<br>
+              gripper grasping bottle<br>
+              box open<br>
+             <b> Post-conditions:</b><br>
+              gripper grasping bottle<br>
+              bottle inside box<br>
+              box open<br>
+              <b style="color: rgb(52, 133, 255);">Collisions:</b><br>
+              <b style="color: rgb(52, 133, 255);">gripper and bottle</b><br>
+            </p>
+          </div>
+          <div class="bot">
+            <p style="text-align: center; font-size: 20px;">Task condition generated by LLM</p>
+            <p style="line-height: 39px;">
+              <b>Task name:</b> move bottle into box<br>
+              <b>Relevant objects:</b> bottle, box, gripper<br>
+              Pre-conditions:<br>
+              gripper grasping bottle<br>
+              box open<br>
+             <b> Post-conditions:</b><br>
+              gripper grasping bottle<br>
+              bottle inside box<br>
+              box open<br>
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="txtimgbox">
+  <div class="main5 w">
+      <h4 style="font-size: 26px; color: rgb(72, 206, 240);">Real-world experiment</h4>
+      <p style="margin-top: 10px;">We design a real-world experiment to evalutate the ability of our framework to generate trajectories using DMP, and to adjust and generate them leveraging the task conditions
+        generated and generalized by the LLM.</p>
+       <div class="voi">
+        <video controls style="width: 700px;" autoplay muted loop>  
+          <source src="compressed/13.mp4" type="video/mp4">  
+        </video>
+       </div>
+       <div class="txt">
+          <p style="line-height: 30px;">
+            We desgin a long-horizon task in real world and used<br>
+            Kinova MOVO to execute it. A RGBD camera is<br>
+            mounted on the robot to get environment pointcloud.<br>
+            The long-horizon task includes six primitive tasks:<br>
+            ■&nbsp;&nbsp;grasp the bottle;<br>
+            ■&nbsp;&nbsp;open the microwave;<br>
+            ■&nbsp;&nbsp;move the bottle in front of the microwave;<br>
+            ■&nbsp;&nbsp;I move the bottle into the microwave:<br>
+            ■&nbsp;&nbsp;release the bottle;<br>
+            ■&nbsp;&nbsp;move out of the microwave;<br>
+            ■&nbsp;&nbsp;close the microwave.<br>
+            ■&nbsp;&nbsp;The video shows the whole process of the long-horizon<br>
+            task using trajectory generated by DMP<br>
+          </p>
+       </div>
+  </div>
+</div>
+
+
+<div class="box">
+  <div class="main4 w">
+    <div class="left">
+      <div>
+          <span class="img">
+            <video controls autoplay muted loop>  
+              <source src="compressed/14.mp4" type="video/mp4">  
+            </video>
+          </span>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">without task condition</h4>
+          <p style="text-align: center; color: rgb(95, 95, 95);  line-height: 32px;">
+            The move into primitive task is failed because initial
+            goal position obtained from environment pointcloud is
+            deviated. And a collision between bottle and box
+            happened.
+          </p>
+        </div>
+      <div>
+        <span class="img">
+          <video controls autoplay muted loop>  
+            <source src="compressed/15.mp4" type="video/mp4">  
+          </video>
+        </span>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+          <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">with task condition adjusting trajectory</h4>
+          <p style="text-align: center; color: rgb(95, 95, 95); line-height: 32px;">
+            As the collision between bottle and box is against task
+condition collision, the manipulator backwards a few
+steps and adjust goal position to generate a new DMP
+trajectory, eventually complete the task.
+          </p>
+      </div>
+      <div>
+        <span class="img">
+          <video controls autoplay muted loop>  
+            <source src="compressed/16.mp4" type="video/mp4">  
+          </video>
+        </span>
+         <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+        <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">without task condition</h4>
+        <p style="text-align: center; color: rgb(95, 95, 95);  line-height: 32px;">
+          The move into primitive task is failed because initial
+          goal position obtained from environment pointcloud is
+          deviated. And a collision between bottle and box
+          happened.
+        </p>
+      </div>
+      <div>
+        <span class="img">
+          <video controls autoplay muted loop>  
+            <source src="compressed/17.mp4" type="video/mp4">  
+          </video>
+        </span>
+        <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">Move the bottle into the box</h4>
+        <h4 style="text-align: center; color:rgb(105, 200, 255); font-size: 18px; margin-top: 10px;">without task condition</h4>
+        <p style="text-align: center; color: rgb(95, 95, 95);  line-height: 32px;">
+          The move into primitive task is failed because initial
+          goal position obtained from environment pointcloud is
+          deviated. And a collision between bottle and box
+          happened.
+        </p>
+      </div>
+    </div>
+    <div class="right">
+        <div class="top">
+          <p style="text-align: center; font-size: 20px;">Task condition generated byLLM</p>
+          <p style="line-height: 32px;">
+            <b>Task name:</b> move bottle into box<br>
+            <b>Relevant objects:</b> bottle, box, gripper<br>
+            Pre-conditions:<br>
+            gripper grasping bottle<br>
+            box open<br>
+           <b> Post-conditions:</b><br>
+            gripper grasping bottle<br>
+            bottle inside box<br>
+            box open<br>
+            <b style="color: rgb(52, 133, 255);">Collisions:</b><br>
+            <b style="color: rgb(52, 133, 255);">gripper and bottle</b><br>
+          </p>
+        </div>
+        <div class="bot">
+          <p style="text-align: center; font-size: 20px;">Task condition generated by LLM</p>
+          <p style="line-height: 32px;">
+            <b>Task name:</b> move bottle into box<br>
+            <b>Relevant objects:</b> bottle, box, gripper<br>
+            Pre-conditions:<br>
+            gripper grasping bottle<br>
+            box open<br>
+           <b> Post-conditions:</b><br>
+            gripper grasping bottle<br>
+            bottle inside box<br>
+            box open<br>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
